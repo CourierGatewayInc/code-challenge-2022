@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\getCountry;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [getCountry::class, 'index']);
 
-Route::get('/countryDetails/{code}/{name}', function ($code,$name) {
-    return view('details' , ['code' => $code,'name' => $name]);
-});
+Route::get('/countryDetails/{code}/{name}',  [getCountry::class, 'details'])->name('get.detail');

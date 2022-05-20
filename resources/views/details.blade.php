@@ -3,13 +3,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h1>Country Details of {{$name}}</h1><hr/>
-                    <?php
-                     $year = date('Y');
-                    $con_detail = json_decode(file_get_contents('https://date.nager.at/api/v3/CountryInfo/'.$code));
-                    $holidays   = json_decode(file_get_contents('https://date.nager.at/api/v3/PublicHolidays/'.$year.'/'.$code.''));
-                    $totalHolidays = count($holidays);
-                     $borderC = count($con_detail->borders);
-                    ?>
+                    
 <!-- Country Details -->
                     <table class="table table-responsive table-hover" >
                         <thead>
