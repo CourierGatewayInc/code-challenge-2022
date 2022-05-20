@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/countryDetails/{code}/{name}', function ($code,$name) {
+    return view('details' , ['code' => $code,'name' => $name]);
+});
